@@ -16,16 +16,26 @@
 
             <z-button size="middle" type="primary" @click="click">触发点击</z-button>
         </div>
+
+        <div>
+            <h4>图标</h4>
+            <div style="font-size: 40px">
+                <z-icon name="my" />
+                <z-icon name="settings_light" />
+                <z-icon name="round_location_fill" />
+            </div>
+        </div>
     </div>
 </template>
 <script>
 import Vue from 'vue';
-import {Button} from './index';
+import {Button, Icon} from './index';
 
 export default {
     name: 'app',
     components:{
-        "z-button": Button
+        "z-button": Button,
+        "z-icon": Icon
     },
     methods:{
         click(){
