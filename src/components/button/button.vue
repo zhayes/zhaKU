@@ -1,0 +1,156 @@
+<template>
+  <button 
+    :class="{'z-btn': true, [`z-btn-${type}`]: true, [`z-btn-${size}`]: true, [`z-btn-ghost`]: ghost, [`z-btn-disabled`]: disabled}" :disabled="disabled"
+    @click="click"
+  >
+    <slot></slot>
+  </button>
+</template>
+<script>
+export default {
+  name: "z-button",
+  props: {
+    type: {
+      type: String,
+      default: "default",
+      validator(value){
+          const types = ['default', 'primary', 'danger'];
+          const result = types.includes(value);
+          if(!result){
+              console.warn(`按钮类型只能选择[${types}]${types.length}种类型`);
+          }
+          return result;
+      }
+    },
+    size: {
+        type: String,
+        default: "middle",
+        validator(value){
+            const sizes = ['small', 'middle', 'large'];
+            const result = sizes.includes(value);
+            if(!result){
+                console.warn(`按钮类型只能选择[${sizes}]${sizes.length}种类型`);
+            }
+            return result;
+        }
+    },
+    ghost: {
+        type: Boolean,
+        default: false
+    },
+    disabled:{
+        type: Boolean,
+        default: false
+    }
+  },
+  methods:{
+      click(){
+          this.$emit('click')
+      }
+  }
+};
+</script>
+<style lang="scss" scoped>
+$btn-bg-default-color: #ffffff;
+$btn-bg-primary-color: #1a73e8;
+$btn-bg-danger-color: #ff0201;
+
+$btn-height-small: 24px;
+$btn-height-middle: 32px;
+$btn-height-large: 40px;
+
+$btn-font-size-small: 14px;
+$btn-font-size-middle: 14px;
+$btn-font-size-large: 18px;
+
+$btn-color: #999;
+$btn-border-style: solid;
+$btn-border-size: 1px;
+$btn-border-radius: 4px;
+
+
+$btn-disabled-color: #00000040;
+$btn-disabled-bg-color: #f5f5f5;
+
+.z-btn {
+  background-color: $btn-bg-default-color;
+  border: $btn-border-size;
+  border-style: $btn-border-style;
+  border-radius: $btn-border-radius;
+  outline: none;
+  cursor: pointer;
+  padding: 0 1em;
+  height: $btn-height-small;
+  font-size: $btn-font-size-middle;
+}
+
+.z-btn-default {
+  background-color: $btn-bg-default-color;
+  border-color: darken($btn-bg-default-color, 15%);
+  &:hover {
+    background-color:darken($btn-bg-default-color,10%);
+  }
+
+  &:focus {
+    background-color:darken($btn-bg-default-color,20%);
+  }
+}
+
+.z-btn-primary {
+  background-color: $btn-bg-primary-color;
+  border-color: darken($btn-bg-primary-color, 15%);
+  &:hover {
+    background-color:darken($btn-bg-primary-color,10%);
+  }
+
+  &:focus {
+    background-color:darken($btn-bg-primary-color,20%);
+  }
+}
+
+.z-btn-danger {
+  background-color: $btn-bg-danger-color;
+  border-color: darken($btn-bg-danger-color, 15%);
+  &:hover {
+    background-color:darken($btn-bg-danger-color,10%);
+  }
+
+  &:focus {
+    background-color:darken($btn-bg-danger-color,20%);
+  }
+}
+
+.z-btn-small{
+    height: $btn-height-small;
+    font-size: $btn-font-size-small;
+}
+.z-btn-middle{
+    height: $btn-height-middle;
+    font-size: $btn-font-size-middle;
+}
+.z-btn-large{
+    height: $btn-height-large;
+    font-size: $btn-font-size-large;
+}
+
+.z-btn-primary,
+.z-btn-danger{
+    color: #fff;
+}
+
+.z-btn-ghost{
+    border-style: dashed;
+}
+
+.z-btn-disabled{
+    color: $btn-disabled-color;
+    background-color: $btn-disabled-bg-color;
+    border-color: darken($btn-disabled-color, 10%);
+    &:hover{
+        background-color: $btn-disabled-bg-color;
+        color: $btn-disabled-color;
+    }
+    cursor: not-allowed;
+}
+//[]:{}
+</style>

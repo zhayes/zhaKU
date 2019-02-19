@@ -1,0 +1,32 @@
+{
+  "name": "zhaui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "vue": "^2.6.6",
+    "vue-hot-reload-api": "^2.3.2",
+    "vue-template-compiler": "^2.6.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel index.html --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhayes/zhaUI.git"
+  },
+  "author": "zha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhayes/zhaUI/issues"
+  },
+  "homepage": "https://github.com/zhayes/zhaUI#readme",
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  }
+}
