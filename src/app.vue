@@ -1,46 +1,113 @@
 <template>
-    <div>
+    <div style="margin: 30px">
+        <h3>zhaUI组件库（基于Vue2.x.x）</h3>
         <div>
             <h4>按钮</h4>
 
-            <z-button type="default">按钮</z-button>
-            <z-button type="primary">按钮</z-button>
-            <z-button type="danger">按钮</z-button>
+            <p>
+                <z-button type="default">default按钮</z-button>
+                <z-button type="primary">primary按钮</z-button>
+                <z-button type="danger">danger按钮</z-button>
+                <z-button type="default" ghost>dashed按钮</z-button>
+                <z-button type="primary" ghost>primary dashed按钮</z-button>
+                <z-button type="danger" ghost>danger dashed按钮</z-button>
+                <z-button type="primary" disabled>禁止点击</z-button>
+            </p>
 
-            <z-button type="default" ghost>按钮</z-button>
-            <z-button type="primary" disabled>按钮</z-button>
+            
+            <p>
+                <z-button loading>loading按钮</z-button>
+                <z-button type="primary" loading>loading按钮</z-button>
+                <z-button type="danger" loading>loading按钮</z-button>
+                <z-button size="middle" type="primary" @click="click" :loading="loading">触发点击</z-button>
+            </p>
+            
+            <p>
+                <z-button size="small" type="primary">small按钮</z-button>
+                <z-button size="middle" type="primary">middle按钮</z-button>
+                <z-button size="large" type="primary">large按钮</z-button>
+            </p>
 
-            <z-button size="small" type="primary">按钮</z-button>
-            <z-button size="middle" type="primary">按钮</z-button>
-            <z-button size="large" type="primary">按钮</z-button>
-
-            <z-button size="middle" type="primary" @click="click">触发点击</z-button>
+            <p>
+                <z-button-group>
+                    <z-button type="default">default按钮</z-button>
+                    <z-button type="primary">primary按钮</z-button>
+                    <z-button type="danger">danger按钮</z-button>
+                </z-button-group>
+            </p>
         </div>
 
         <div>
-            <h4>图标</h4>
-            <div style="font-size: 40px">
+            <h4>图标（基于手机淘宝图标库）</h4>
+            <p style="font-size: 40px">
                 <z-icon name="my" />
                 <z-icon name="settings_light" />
                 <z-icon name="round_location_fill" />
-            </div>
+                <z-icon name="comment" />
+            </p>
+        </div>
+
+        <div>
+            <h4>Input组件</h4>
+            <p>
+                <z-input type="text" size="small"/>
+                <z-input type="text" size="middle"/>
+                <z-input type="text" size="large"/>
+            </p>
+            <p>
+                <z-input type="text" disabled value="disabled输入框"/>
+                <z-input type="text" readOnly value="只读输入框"/>
+            </p>
+            <p>
+                <z-input type="text" v-model="inputVal" />
+                <z-button type="default" size="small" @click="inputVal=inputVal+1">+1</z-button>
+                {{inputVal}}
+            </p>
+            <p>
+                <z-input type="text" iconName="search"/>
+            </p>
+            <p>
+                <z-input type="text" iconName="search" iconPosition="after"/>
+            </p>
         </div>
     </div>
 </template>
 <script>
 import Vue from 'vue';
-import {Button, Icon} from './index';
+import {Button, ButtonGroup, Icon, Input} from './index';
 
 export default {
     name: 'app',
+    data(){
+        return{
+            inputVal: '双向数据绑定',
+            loading: false
+        }
+    },
     components:{
         "z-button": Button,
-        "z-icon": Icon
+        "z-button-group": ButtonGroup,
+        "z-icon": Icon,
+        "z-input": Input
     },
     methods:{
         click(){
-            alert('我被点击了')
+            this.loading = true;
+            setTimeout(()=>{
+                this.loading = false
+            }, 2000)
         }
     }
 }
 </script>
+<style lang="scss">
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 1em;
+}
+</style>
+
