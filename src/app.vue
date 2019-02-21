@@ -1,6 +1,6 @@
 <template>
     <div style="margin: 30px">
-        <h3>zhaUI组件库（基于Vue2.x.x）</h3>
+        <h3>zhaUI组件库（渣库）（基于Vue2.x.x）</h3>
         <div>
             <h4>按钮</h4>
 
@@ -30,9 +30,17 @@
 
             <p>
                 <z-button-group>
-                    <z-button type="default">default按钮</z-button>
-                    <z-button type="primary">primary按钮</z-button>
-                    <z-button type="danger">danger按钮</z-button>
+                    <z-button type="default">按钮1</z-button>
+                    <z-button type="primary">按钮2</z-button>
+                    <z-button type="primary">按钮3</z-button>
+                    <z-button type="danger">按钮4</z-button>
+                </z-button-group>
+            </p>
+
+            <p>
+                <z-button-group>
+                    <z-button type="default">按钮1</z-button>
+                    <z-button type="primary">按钮2</z-button>
                 </z-button-group>
             </p>
         </div>
@@ -60,14 +68,21 @@
             </p>
             <p>
                 <z-input type="text" v-model="inputVal" />
-                <z-button type="default" size="small" @click="inputVal=inputVal+1">+1</z-button>
+                <z-button type="primary" @click="inputVal=inputVal+1">+1</z-button>
                 {{inputVal}}
             </p>
             <p>
                 <z-input type="text" iconName="search"/>
-            </p>
-            <p>
                 <z-input type="text" iconName="search" iconPosition="after"/>
+            </p>
+        </div>
+
+        <div>
+            <h4>Toast组件</h4>
+            <p>
+                <z-button @click="toastTop">触发 top toast</z-button>
+                <z-button @click="toastBottom">触发 bottom toast</z-button>
+                <z-button @click="toastLayoutColumn">触发上下布局toast</z-button>
             </p>
         </div>
     </div>
@@ -75,6 +90,8 @@
 <script>
 import Vue from 'vue';
 import {Button, ButtonGroup, Icon, Input} from './index';
+import {toast} from './plugins/toast';
+Vue.use(toast);
 
 export default {
     name: 'app',
@@ -96,6 +113,24 @@ export default {
             setTimeout(()=>{
                 this.loading = false
             }, 2000)
+        },
+        toastTop(){
+            this.$ztoast('hi, zhaUI! 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示',{
+                closeButtonText: '知道了',
+                position: 'top'
+            })
+        },
+        toastBottom(){
+            this.$ztoast('hi, zhaUI! 我在下面展示',{
+                closeButtonText: '知道了',
+                position: 'bottom'
+            })
+        },
+        toastLayoutColumn(){
+            this.$ztoast('hi, zhaUI! 我是上下布局',{
+                closeButtonText: '知道了',
+                layout: 'column'
+            })
         }
     }
 }

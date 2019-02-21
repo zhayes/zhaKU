@@ -15,6 +15,10 @@ export default {
     align-items: center;
     overflow: hidden;
 
+    .z-btn{
+        border-right-width: 0 
+    }
+
     .z-btn:not(:first-of-type):not(:last-of-type){
         border-radius: 0;
     }
@@ -27,6 +31,7 @@ export default {
     .z-btn:last-child{
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        border-right-width: 1px;
     }
 }
 </style>

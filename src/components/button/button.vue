@@ -206,15 +206,15 @@ $btn-disabled-bg-color: #f5f5f5;
 }
 
  .z-btn-default-loading {
-    background-color: darken($btn-bg-default-color, 20%);
+    background-color: darken($btn-bg-default-color, 10%);
     cursor: not-allowed;
   }
   .z-btn-primary-loading {
-    background-color: darken($btn-bg-primary-color, 20%);
+    background-color: darken($btn-bg-primary-color, 10%);
     cursor: not-allowed;
   }
   .z-btn-danger-loading {
-    background-color: darken($btn-bg-danger-color, 20%);
+    background-color: darken($btn-bg-danger-color, 10%);
     cursor: not-allowed;
   }
 </style>

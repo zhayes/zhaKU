@@ -104,7 +104,7 @@ $input-border-color: #d9d9d9;
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  //background-color: transparent;
+  vertical-align: middle;
 
   .z-input {
     height: $input-height-middle;
