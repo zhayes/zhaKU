@@ -118,6 +118,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 10;
   left: 0;
   right: 0;
   margin: auto;
@@ -125,7 +126,6 @@ export default {
   color: #fff;
   font-size: 14px;
   flex-direction: row;
-
   box-shadow: 0 1px 10px 4px darken(#fff, 50%);
 
   .z-toast-message {

@@ -85,12 +85,43 @@
                 <z-button @click="toastLayoutColumn">触发上下布局toast</z-button>
             </p>
         </div>
+
+        <div>
+            <h4>Tabs组件</h4>
+            <p>
+                <z-button @click="changeSelect">动态改变</z-button>
+                <z-tabs :selected="selected" @update:selected="selectedHandle" >
+                    <z-tabs-header>
+                        <z-tabs-item name="tab1">tab 1</z-tabs-item>
+                        <z-tabs-item name="tab2">tab 2</z-tabs-item>
+                        <z-tabs-item name="tab3">tab 3</z-tabs-item>
+                    </z-tabs-header>
+                    <z-tabs-body>
+                        <z-tabs-pane name="tab1">tab1 content</z-tabs-pane>
+                        <z-tabs-pane name="tab2">tab2 content</z-tabs-pane>
+                        <z-tabs-pane name="tab3">tab3 content</z-tabs-pane>
+                    </z-tabs-body>
+                </z-tabs>
+            </p>
+        </div>
     </div>
 </template>
 <script>
 import Vue from 'vue';
-import {Button, ButtonGroup, Icon, Input} from './index';
+import {
+    Button, 
+    ButtonGroup, 
+    Icon, 
+    Input,
+    Tabs,
+    TabsBody, 
+    TabsHeader, 
+    TabsItem, 
+    TabsPane
+} from './index';
+
 import {toast} from './plugins/toast';
+
 Vue.use(toast);
 
 export default {
@@ -98,14 +129,20 @@ export default {
     data(){
         return{
             inputVal: '双向数据绑定',
-            loading: false
+            loading: false,
+            selected: 'tab1'
         }
     },
     components:{
         "z-button": Button,
         "z-button-group": ButtonGroup,
         "z-icon": Icon,
-        "z-input": Input
+        "z-input": Input,
+        "z-tabs": Tabs,
+        "z-tabs-body": TabsBody, 
+        "z-tabs-header": TabsHeader, 
+        "z-tabs-item": TabsItem, 
+        "z-tabs-pane": TabsPane
     },
     methods:{
         click(){
@@ -131,6 +168,12 @@ export default {
                 closeButtonText: '知道了',
                 layout: 'column'
             })
+        },
+        selectedHandle(name){
+            this.selected = name;
+        },
+        changeSelect(){
+            this.selected = 'tab3';
         }
     }
 }
