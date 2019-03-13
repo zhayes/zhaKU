@@ -3,6 +3,7 @@
     <span
       v-if="iconName"
       :class="{'z-input-icon': true, 'z-input-icon-before': (iconPosition=='before'), 'z-input-icon-after': (iconPosition=='after')}"
+      @click="clickIconHandle"
     >
       <z-icon :name="iconName"/>
     </span>
@@ -12,11 +13,13 @@
       :type="type"
       :value="value"
       :disabled="disabled"
-      :readonly="readOnly"
-      @input="$emit('input', $event.target.value)"
-      @change="$emit('change', $event.target.value)"
+      :readonly="readonly"
+      :placeholder="placeholder"
+      @input="$emit('input', $event.target.value, $event)"
+      @change="$emit('change', $event.target.value, $event)"
       @blur="$emit('blur', $event)"
       @focus="$emit('focus', $event)"
+      @click="$emit('click', $event)"
     >
   </div>
 </template>
@@ -57,7 +60,7 @@ export default {
       type: Boolean,
       default: false
     },
-    readOnly: {
+    readonly: {
       type: Boolean,
       default: false
     },
@@ -66,6 +69,9 @@ export default {
     },
     value: {
       type: [String, Number]
+    },
+    placeholder: {
+      type: String
     },
     iconName: {
       type: String
@@ -87,6 +93,11 @@ export default {
   },
   components: {
     "z-icon": Icon
+  },
+  methods:{
+    clickIconHandle(){
+      this.$emit("iconTrigger")
+    }
   }
 };
 </script>

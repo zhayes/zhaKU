@@ -2,7 +2,8 @@ import Button from './components/button/button.vue';
 import Icon from './components/icon/icon.vue';
 import ButtonGroup from './components/button/group.vue';
 import Input from './components/input/input.vue';
-import Tabs,{TabsBody, TabsHeader, TabsItem, TabsPane} from './components/tabs/index.js'
+import Tabs,{TabsBody, TabsHeader, TabsItem, TabsPane} from './components/tabs/index.js';
+import Cascader from './components/cascader/cascader.vue';
 
 export {
     Button,
@@ -13,5 +14,6 @@ export {
     TabsBody, 
     TabsHeader, 
     TabsItem, 
-    TabsPane
+    TabsPane,
+    Cascader
 }

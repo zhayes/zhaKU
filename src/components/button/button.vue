@@ -94,6 +94,8 @@ $btn-disabled-bg-color: #f5f5f5;
   padding: 0 1em;
   height: $btn-height-small;
   font-size: $btn-font-size-middle;
+
+  @extend .z-btn-default;
 }
 
 .z-btn-default {

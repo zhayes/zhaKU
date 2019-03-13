@@ -24,16 +24,18 @@ export default {
     };
   },
   mounted() {
-    this.eventBus.$on("update:selected", name => {
-      this.$emit("update:selected", name);
-    });
-    this.eventBus && this.eventBus.$emit("update:selected", this.selected);
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", name => {
+        this.$emit("update:selected", name);
+      });
+      this.eventBus.$emit("update:selected", this.selected);
+    }
   },
-  watch:{
-      selected(name){
-          this.selected = name;
-          this.eventBus && this.eventBus.$emit("update:selected", this.selected);
-      }
+  watch: {
+    selected(name) {
+      this.selected = name;
+      this.eventBus && this.eventBus.$emit("update:selected", this.selected);
+    }
   }
 };
 </script>
