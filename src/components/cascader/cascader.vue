@@ -6,9 +6,10 @@
       ref="input"
       @click.stop="trigger"
       :value="selectedLabels"
-      :iconName="(allowClear && selectedLabels&&!visible ? 'round_close_light' : null)"
+      :iconName="(allowClear && selectedLabels&&!visible ? 'round_close_light' : visible ? 'fold' : 'unfold')"
       iconPosition="after"
       @iconTrigger="clearn"
+      style="width:100%"
     />
     <div class="cascaderBox" v-show="visible">
       <div
@@ -62,12 +63,12 @@ export default {
       type: Array,
       default: () => []
     },
-    allowClear:{
-        type: Boolean,
-        default: true
+    allowClear: {
+      type: Boolean,
+      default: true
     },
-    placeholder:{
-        type: String
+    placeholder: {
+      type: String
     }
   },
   components: {
@@ -91,12 +92,20 @@ export default {
       this.eventBus.$emit("update:change", this.currentItems);
     },
     clearn() {
-        this.memorySelectedLabels = '';
-        this.memoryCurrentItems = [];
-        this.currentItems = [];
-        this.selectedLabels = '';
+      if (!this.allowClear || this.visible || !this.selectedLabels) return;
+      this.memorySelectedLabels = "";
+      this.memoryCurrentItems = [];
+      this.currentItems = [];
+      this.selectedLabels = "";
 
-        this.eventBus.$emit('update:change', this.currentItems);
+      this.eventBus.$emit("update:change", this.currentItems);
+
+      this.$emit(
+        "change",
+        [],
+        [],
+        []
+      );
     },
     getLabels(currentItems) {
       const labels = [];
@@ -104,7 +113,7 @@ export default {
         labels.push(item[this.labelKey]);
       });
 
-      return labels.join(this.divisionSymbol);
+      return labels.join(` ${this.divisionSymbol} `);
     },
     initCurrentItems(value) {
       //根据组件传入的value值，初始化当前选中项，该方法在created生命周期里调用
@@ -129,6 +138,11 @@ export default {
 
       this.memorySelectedLabels = this.selectedLabels;
       this.memoryCurrentItems = JSON.parse(JSON.stringify(this.currentItems));
+    },
+    getValues() {
+      return this.currentItems.map(item => {
+        return item[this.valueKey];
+      });
     }
   },
   created() {
@@ -138,10 +152,7 @@ export default {
       this.currentItems[index] = item;
       this.currentItems.splice(index + 1);
 
-      const values = this.currentItems.map(item => {
-        return item[this.valueKey];
-      });
-
+      const values = this.getValues();
       const labels = this.getLabels(this.currentItems);
 
       this.selectedLabels = labels;
@@ -149,9 +160,16 @@ export default {
       if (!item[this.childrenKey] || !!!item[this.childrenKey].length) {
         this.visible = false;
         this.memorySelectedLabels = this.selectedLabels;
-        this.memoryCurrentItems = [...this.currentItems]
+        this.memoryCurrentItems = [...this.currentItems];
 
-        this.$emit("change", values, labels, this.memoryCurrentItems);
+        this.$emit(
+          "change",
+          values,
+          this.selectedLabels
+            .split(this.divisionSymbol)
+            .map(label => label.trim()),
+          this.memoryCurrentItems
+        );
       }
       this.eventBus.$emit("update:change", this.currentItems);
     });
@@ -173,7 +191,7 @@ export default {
       if (this.visible) {
         this.visible = false;
 
-        this.currentItems = [...this.memoryCurrentItems]
+        this.currentItems = [...this.memoryCurrentItems];
         this.selectedLabels = this.memorySelectedLabels;
 
         this.eventBus.$emit("update:change", this.currentItems);

@@ -32,6 +32,6 @@ export default {
       }
   }
   .z-icon-spinning {
-      animation: spinnig 1s  linear infinite;
+      animation: spinnig 1s linear infinite;
   }
 </style>

@@ -4,7 +4,7 @@
     :disabled="disabled||loading"
     @click="click"
   >
-    <z-icon v-if="loading" spinning name="loading" style="margin-right:.25em"/>
+    <z-icon v-if="loading" spinning name="loading_mum" class="z-btn-loading"/>
     <slot></slot>
   </button>
 </template>
@@ -77,7 +77,7 @@ $btn-border-style: solid;
 $btn-border-size: 1px;
 $btn-border-radius: 4px;
 
-$btn-disabled-color: #00000040;
+$btn-disabled-color: #aaa;
 $btn-disabled-bg-color: #f5f5f5;
 
 .z-btn {
@@ -94,6 +94,7 @@ $btn-disabled-bg-color: #f5f5f5;
   padding: 0 1em;
   height: $btn-height-small;
   font-size: $btn-font-size-middle;
+  user-select: none;
 
   @extend .z-btn-default;
 }
@@ -193,7 +194,18 @@ $btn-disabled-bg-color: #f5f5f5;
 .z-btn-ghost-default,
 .z-btn-ghost-primary,
 .z-btn-ghost-danger{
-  background-color: #fff!important;
+  background-color: #fff
+}
+
+.z-btn-ghost-default,
+.z-btn-ghost-primary,
+.z-btn-ghost-danger{
+  &:hover{
+    background-color: #fff;
+  }
+  &:focus{
+    background-color: #eaeaea;
+  }
 }
 
 .z-btn-disabled {
@@ -209,14 +221,21 @@ $btn-disabled-bg-color: #f5f5f5;
 
  .z-btn-default-loading {
     background-color: darken($btn-bg-default-color, 10%);
-    cursor: not-allowed;
   }
   .z-btn-primary-loading {
     background-color: darken($btn-bg-primary-color, 10%);
-    cursor: not-allowed;
   }
   .z-btn-danger-loading {
     background-color: darken($btn-bg-danger-color, 10%);
+  }
+
+  .z-btn-default-loading, .z-btn-primary-loading, .z-btn-danger-loading{
+    color: $btn-disabled-color;
     cursor: not-allowed;
+  }
+
+  .z-btn-loading{
+    position: absolute;
+    font-size: 1.7em;
   }
 </style>

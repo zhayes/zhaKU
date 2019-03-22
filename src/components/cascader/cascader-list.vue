@@ -102,11 +102,11 @@ export default {
 .cascader-list {
   display: flex;
   height: 200px;
-  overflow-y: auto;
   background-color: #fff;
 
   .left {
     flex: 1;
+    overflow-y: auto;
     .items {
       @extend .items;
     }

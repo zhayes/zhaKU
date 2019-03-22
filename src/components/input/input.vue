@@ -2,10 +2,10 @@
   <div class="z-input-swrap">
     <span
       v-if="iconName"
-      :class="{'z-input-icon': true, 'z-input-icon-before': (iconPosition=='before'), 'z-input-icon-after': (iconPosition=='after')}"
+      :class="{'z-input-icon': true, 'z-input-icon-before': (iconPosition=='before'), 'z-input-icon-after': (iconPosition=='after'), [`z-input-icon-${size}`]: true}"
       @click="clickIconHandle"
     >
-      <z-icon :name="iconName"/>
+      <z-icon :name="iconName" style="margin:auto"/>
     </span>
     <input
       :class="{'z-input': true, [`z-input-${size}`]: true, 'z-input-disabled': disabled}"
@@ -94,9 +94,9 @@ export default {
   components: {
     "z-icon": Icon
   },
-  methods:{
-    clickIconHandle(){
-      this.$emit("iconTrigger")
+  methods: {
+    clickIconHandle() {
+      this.$emit("iconTrigger");
     }
   }
 };
@@ -116,6 +116,7 @@ $input-border-color: #d9d9d9;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  width: 180px;
 
   .z-input {
     height: $input-height-middle;
@@ -127,7 +128,8 @@ $input-border-color: #d9d9d9;
 
     flex: 1;
     padding: 0 1em;
-    &:focus{
+    width: 100%;
+    &:focus {
       box-shadow: inset 0px 0px 0px 1px #c1c0c0;
     }
   }
@@ -147,31 +149,45 @@ $input-border-color: #d9d9d9;
     height: $input-height-large;
   }
 
-  .z-input-disabled{
-      background-color: $input-disabled-bg-color;
-      cursor: not-allowed;
+  .z-input-icon-large {
+    font-size: 18px;
+  }
+
+  .z-input-icon-middle{
+    font-size: 14px;
+  }
+
+  .z-input-icon-small{
+    font-size: 14px;
+  }
+
+  .z-input-disabled {
+    background-color: $input-disabled-bg-color;
+    cursor: not-allowed;
   }
 
   .z-input-icon {
     display: inline-flex;
     position: absolute;
+    width: 2em;
+    height: 100%;
+    align-items: center;
   }
 
   .z-input-icon-before {
     order: 0;
-    left: 0.5em;
+    left: 0;
   }
 
   .z-input-icon-after {
     order: 1;
-    right: 0.5em;
+    right: 0;
   }
-  .z-input-icon-after +.z-input{
-      padding-right: 2em;
+  .z-input-icon-after + .z-input {
+    padding-right: 2em;
   }
-  .z-input-icon-before +.z-input{
-      padding-left: 2em;
+  .z-input-icon-before + .z-input {
+    padding-left: 2em;
   }
-
 }
 </style>

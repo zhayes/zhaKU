@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "better-scroll": "^1.15.0",
     "node-sass": "^4.11.0",
+    "src": "^1.1.2",
     "vue": "^2.6.6",
     "vue-hot-reload-api": "^2.3.2",
     "vue-template-compiler": "^2.6.6"

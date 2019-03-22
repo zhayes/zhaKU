@@ -59,7 +59,7 @@
       <p>
         <z-input type="text" size="small"/>
         <z-input type="text" size="middle"/>
-        <z-input type="text" size="large"/>
+        <z-input type="text" size="large" iconName="search"/>
       </p>
       <p>
         <z-input disabled placeholder="disabled输入框"></z-input>
@@ -121,9 +121,47 @@
     <div>
       <h4>Cascarder组件</h4>
       <p>
-        <z-cascader :data="dataList" :value="districts" @change="selectChange"/>
+        <z-cascader :data="dataList" :value="districts" @change="selectChange" valueKey="code"/>
       </p>
-      <z-button @click="districts=[1,10]">动态改变选中项</z-button>
+      <p>
+        <z-button @click="districts=['12', '1201', '120101']" type="primary">动态改变选中项</z-button>
+      </p>
+    </div>
+
+    <div>
+      <h4>Cell组件</h4>
+      <p>
+        <z-cell>
+          <div slot="title" style="display:flex;align-items:center">
+            <z-icon name="comment"/>发生地方是否收到
+          </div>发多少是多福多寿
+        </z-cell>
+        <z-cell title="标题">展示内容
+          <z-icon name="settings_light"/>
+        </z-cell>
+        <z-cell title="标题">展示内容</z-cell>
+        <z-cell title="标题">展示内容</z-cell>
+      </p>
+    </div>
+
+    <div>
+      <h4>Picker组件</h4>
+      <p>
+        {{pcaItems[0] ? pcaItems[0].name : '- 省 -'}} / {{pcaItems[1] ? pcaItems[1].name : '- 市 -'}} / {{pcaItems[2] ? pcaItems[2].name : '- 区 -'}}
+      </p>
+      <z-button @click="togglePicker">显示picker</z-button>
+      <p>
+        <z-picker 
+          :visible="pickerVisible"
+          @confirm="pickerChange" 
+          @cancel="cancelPicker" 
+          :value="pickerValue"
+          :data="dataList" 
+          valueKey="code"
+          title="请选择省市区"
+        >
+        </z-picker>
+      </p>
     </div>
   </div>
 </template>
@@ -139,8 +177,12 @@ import {
   TabsHeader,
   TabsItem,
   TabsPane,
-  Cascader
+  Cascader,
+  Cell,
+  Picker
 } from "./index";
+
+import pca from './components/picker/pca.js';
 
 import { toast } from "./plugins/toast";
 
@@ -153,25 +195,11 @@ export default {
       inputVal: "双向数据绑定",
       loading: false,
       selected: "tab1",
-      dataList: [
-        {
-          name: "浙江",
-          id: 1,
-          children: [
-            { name: "杭州市", id: 10, children: [{ name: "杭州", id: 12 }] },
-            { name: "义乌", id: 11 }
-          ]
-        },
-        { name: "安徽", id: 2, children: [{ name: "合肥", id: 20 }] },
-        {
-          name: "江苏",
-          id: 3,
-          disabled: true,
-          children: [{ name: "南京", id: 30 }]
-        },
-        { name: "上海", id: 4, children: [{ name: "上海", id: 40 }] }
-      ],
-      districts:[2,20]
+      dataList: pca,
+      districts: ["11", "1101", "110101"],
+      pickerVisible: false,
+      pickerValue: [],
+      pcaItems: []
     };
   },
   components: {
@@ -184,7 +212,9 @@ export default {
     "z-tabs-header": TabsHeader,
     "z-tabs-item": TabsItem,
     "z-tabs-pane": TabsPane,
-    "z-cascader": Cascader
+    "z-cascader": Cascader,
+    "z-cell": Cell,
+    "z-picker": Picker
   },
   methods: {
     click() {
@@ -220,13 +250,29 @@ export default {
     changeSelect(type) {
       this.selected = type;
     },
-    selectChange(vlues, labels, data){
-      console.log(vlues, labels, data)
+    selectChange(vlues, labels, data) {
+      console.log(vlues, labels, data);
+    },
+    togglePicker(){
+      this.pickerVisible = !this.pickerVisible;
+    },
+    pickerChange(value, data){
+      this.pickerValue = value;
+      this.pcaItems = data;
+      console.log(this.pickerValue)
+      this.pickerVisible = false;
+    },
+    cancelPicker(){
+      this.pickerVisible = false;
     }
   }
 };
 </script>
 <style lang="scss">
+html,
+body {
+  background: #fff;
+}
 * {
   margin: 0;
   padding: 0;
