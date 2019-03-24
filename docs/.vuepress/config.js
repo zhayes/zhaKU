@@ -1,7 +1,7 @@
 module.exports = {
-    base:'/zhaui/',
+    base:'/zhaKU/',
     title: 'zhaKU',
-    description: 'Just playing around',
+    description: '基于vue2.xx的基本组件库',
     themeConfig: {
         nav: [
             { text: '个人博客', link: 'https://zhayes.github.io' }
