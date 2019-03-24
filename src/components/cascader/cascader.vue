@@ -1,7 +1,9 @@
 <template>
-  <div class="cascader">
+  <div class="z-cascader">
     <z-input
       readonly
+      :placeholder="placeholder"
+      :size="size"
       class="cascader-input"
       ref="input"
       @click.stop="trigger"
@@ -69,6 +71,20 @@ export default {
     },
     placeholder: {
       type: String
+    },
+    size: {
+      type: String,
+      default: "middle",
+      validator(value) {
+        const sizes = ["small", "middle", "large"];
+        const result = sizes.includes(value);
+        if (!result) {
+          console.error(
+            `input属性size不支持${value}类型。它应属于[${sizes}]中之一`
+          );
+        }
+        return result;
+      }
     }
   },
   components: {
@@ -100,12 +116,7 @@ export default {
 
       this.eventBus.$emit("update:change", this.currentItems);
 
-      this.$emit(
-        "change",
-        [],
-        [],
-        []
-      );
+      this.$emit("change", [], [], []);
     },
     getLabels(currentItems) {
       const labels = [];
@@ -201,8 +212,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.cascaderBox {
-  position: relative;
+.z-cascader {
+  width: 250px;
+  .cascaderBox {
+    position: relative;
+  }
 }
 </style>
 

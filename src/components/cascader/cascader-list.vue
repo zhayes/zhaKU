@@ -7,7 +7,7 @@
         :class="{'items': true , 'item-disabled': item.disabled, 'item-active': (currentItem && currentItem[valueKey]===item[valueKey]) }"
         @click.stop="selectedHandle(item)"
       >
-        <span class="content">{{item[labelKey]}}</span>
+        <span class="cascader-content">{{item[labelKey]}}</span>
         <z-icon v-show="item[childrenKey] && item[childrenKey].length" name="right" class="arrow"/>
       </div>
     </div>
@@ -77,11 +77,11 @@ export default {
   flex-flow: nowrap;
   width: 100px;
   align-items: center;
-  .content {
+  .cascader-content {
     flex: 1;
   }
 
-  .content {
+  .cascader-content {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

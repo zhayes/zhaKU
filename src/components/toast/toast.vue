@@ -118,7 +118,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   left: 0;
   right: 0;
   margin: auto;

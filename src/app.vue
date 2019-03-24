@@ -63,7 +63,7 @@
       </p>
       <p>
         <z-input disabled placeholder="disabled输入框"></z-input>
-        <z-input readonly></z-input>
+        <z-input readonly placeholder="只读输入框"></z-input>
       </p>
       <p>
         <z-input type="text" v-model="inputVal"/>

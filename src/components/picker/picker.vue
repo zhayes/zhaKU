@@ -217,7 +217,7 @@ export default {
   left: 0;
   right: 0;
   background-color: rgba($color: #000, $alpha: 0.4);
-  z-index: 10;
+  z-index: 90;
   overflow: hidden;
 }
 

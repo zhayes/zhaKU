@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper" ref="wrapper">
-    <div class="content">
-      <div class="item" :key="item[valueKey]" v-for="item in items">{{item[labelKey]}}</div>
+  <div class="z-item-wrapper" ref="wrapper">
+    <div class="z-item-content">
+      <div class="z-item" :key="item[valueKey]" v-for="item in items">{{item[labelKey]}}</div>
     </div>
   </div>
 </template>
@@ -118,7 +118,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wrapper {
+.z-item-wrapper {
   height: 40px;
   width: 100%;
   position: absolute;
@@ -130,8 +130,8 @@ export default {
   background-color: #fff;
   text-align: center;
 
-  .content {
-    .item {
+  .z-item-content {
+    .z-item {
       line-height: 40px;
       background: transparent;
       font-size: 14px;
