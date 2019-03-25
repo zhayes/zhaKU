@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h4>Toast组件</h4>
     <p>
       <z-button @click="toastTop">触发 top toast</z-button>
       <z-button @click="toastBottom">触发 bottom toast</z-button>
@@ -22,7 +21,7 @@ export default {
   methods: {
     toastTop() {
       this.$ztoast(
-        "hi, zhaUI! 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示",
+        "hi, zhaKU! 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示",
         {
           closeButtonText: "知道了",
           position: "top"
@@ -30,13 +29,13 @@ export default {
       );
     },
     toastBottom() {
-      this.$ztoast("hi, zhaUI! 我在下面展示", {
+      this.$ztoast("hi, zhaKU! 我在下面展示", {
         closeButtonText: "知道了",
         position: "bottom"
       });
     },
     toastLayoutColumn() {
-      this.$ztoast("hi, zhaUI! 我是上下布局", {
+      this.$ztoast("hi, zhaKU! 我是上下布局", {
         closeButtonText: "知道了",
         layout: "column"
       });

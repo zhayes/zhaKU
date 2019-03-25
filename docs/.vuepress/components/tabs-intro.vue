@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h4>Tabs组件(该组件只提供最基本的切换功能，提供选中样式属性activeClass)</h4>
     <p>
       <z-tabs :selected="selected" @update:selected="selectedHandle">
         <z-tabs-header style="display: flex; text-align:center">
@@ -15,7 +14,7 @@
         </z-tabs-body>
       </z-tabs>
     </p>
-    动态切换
+    动态控制切换
     <p>
       <z-button-group>
         <z-button

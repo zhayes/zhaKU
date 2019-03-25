@@ -33,14 +33,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhayes/zhaUI.git"
+    "url": "git+https://github.com/zhayes/zhaKU.git"
   },
   "author": "zha",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhayes/zhaUI/issues"
+    "url": "https://github.com/zhayes/zhaKU/issues"
   },
-  "homepage": "https://github.com/zhayes/zhaUI#readme",
+  "homepage": "https://github.com/zhayes/zhaKU#readme",
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
   }

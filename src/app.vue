@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 30px">
-    <h3>zhaUI组件库（渣库）（基于Vue2.x.x）</h3>
+    <h3>zhaKU组件库（渣库）（基于Vue2.x.x）</h3>
     <div>
       <h4>按钮</h4>
 
@@ -225,7 +225,7 @@ export default {
     },
     toastTop() {
       this.$ztoast(
-        "hi, zhaUI! 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示",
+        "hi, zhaKU! 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示 我在上面展示",
         {
           closeButtonText: "知道了",
           position: "top"
@@ -233,13 +233,13 @@ export default {
       );
     },
     toastBottom() {
-      this.$ztoast("hi, zhaUI! 我在下面展示", {
+      this.$ztoast("hi, zhaKU! 我在下面展示", {
         closeButtonText: "知道了",
         position: "bottom"
       });
     },
     toastLayoutColumn() {
-      this.$ztoast("hi, zhaUI! 我是上下布局", {
+      this.$ztoast("hi, zhaKU! 我是上下布局", {
         closeButtonText: "知道了",
         layout: "column"
       });

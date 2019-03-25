@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h4>Picker组件</h4>
     <p>{{pcaItems[0] ? pcaItems[0].name : '- 省 -'}} / {{pcaItems[1] ? pcaItems[1].name : '- 市 -'}} / {{pcaItems[2] ? pcaItems[2].name : '- 区 -'}}</p>
     <z-button @click="togglePicker">显示picker</z-button>
     <p>
@@ -41,7 +40,6 @@ export default {
     pickerChange(value, data) {
       this.pickerValue = value;
       this.pcaItems = data;
-      console.log(this.pickerValue);
       this.pickerVisible = false;
     },
     cancelPicker() {

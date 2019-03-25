@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h4>Cascarder组件</h4>
     <p>
       <z-cascader :data="dataList" :value="districts" @change="selectChange" valueKey="code" placeholder="请选择省市区"/>
     </p>
@@ -22,7 +21,6 @@ export default {
   data() {
     return {
       dataList: pca,
-      //districts: ["11", "1101", "110101"]
       districts: []
     };
   },

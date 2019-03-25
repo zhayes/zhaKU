@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>图标（基于<a target="_blank" href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=33">手机淘宝图标库</a>）</h4>
+    <h4>基于<a target="_blank" href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=33">手机淘宝图标库</a></h4>
     <p style="font-size: 40px">
       <z-icon name="my"/>
       <z-icon name="settings_light"/>
@@ -17,6 +17,3 @@ export default {
     }
 };
 </script>
-<style lang="sass" scoped>
-
-</style>
