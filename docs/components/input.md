@@ -15,7 +15,7 @@ title: Input
 |属性|含义|类型|默认
 |:-|:-|:-|:-|
 |placeholder|输入框提示文字|String||
-|type|输入框类型|String: 同原生input的type属性|text|
+|type|输入框类型|String: hidden,password,text|text|
 |size|输入框尺寸|String: small, middle, large|middle|
 |disabled|是否禁止输入|Boolean|false|
 |readonly|是否只读|Boolean|false|

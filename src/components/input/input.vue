@@ -65,7 +65,7 @@ export default {
       default: false
     },
     name: {
-      type: String
+      type: String,
     },
     value: {
       type: [String, Number]
