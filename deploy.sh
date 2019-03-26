@@ -8,6 +8,9 @@ npm run docs:build
 
 git checkout gh-pages
 
+rm -rf assert
+rm -rf components
+
 mv docs/.vuepress/dist/* .
 
 rm -rf docs
