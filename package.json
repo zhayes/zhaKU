@@ -29,7 +29,8 @@
   "scripts": {
     "start": "parcel index.html -p 8080 --no-cache",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "./deploy.sh"
   },
   "repository": {
     "type": "git",

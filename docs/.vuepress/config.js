@@ -11,6 +11,7 @@ module.exports = {
             '/components/icon.md',
             '/components/button.md',
             '/components/input.md',
+            '/components/switch.md',
             '/components/toast.md',
             '/components/cell.md',
             '/components/tabs.md',

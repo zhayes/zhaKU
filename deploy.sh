@@ -6,20 +6,15 @@ set -e
 # build
 npm run docs:build
 
-# navigate into the build output directory
-cd docs/.vuepress/dist
+git checkout gh-pages
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+mv docs/.vuepress/dist/* .
 
-git init
+rm -rf docs
+
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy zhakU press'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:zhayes/zhayes.github.io.git master
+git push
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:zhayes/zhaKU.git master:gh-pages
-
-cd -
+echo'完成'
