@@ -16,8 +16,11 @@ mv docs/.vuepress/dist/* .
 rm -rf docs
 
 git add -A
+
 git commit -m 'deploy zhaKU docs'
 
 git push
 
-echo '发布完成'
+git checkout master
+
+echo '**********发布完成**********'

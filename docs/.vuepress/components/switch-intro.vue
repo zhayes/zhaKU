@@ -1,11 +1,11 @@
 <template>
   <div>
     <p>
-      <z-switch v-model="checked">
-        <div style="margin-right:.5em">点击我</div>
-      </z-switch>
+      <z-switch v-model="checked" size="small" />
+      <z-switch v-model="checked" size="middle"/>
+      <z-switch v-model="checked" size="large"/>
     </p>
-    <z-button @click="triggerHandle">通过checked改变</z-button>
+    <z-button type="primary" @click="triggerHandle">通过checked改变</z-button>
   </div>
 </template>
 <script>
