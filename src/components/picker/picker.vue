@@ -246,6 +246,8 @@ export default {
 }
 
 .title {
+  position: relative;
+  z-index: 5;
   padding: 0.5em 0.5em;
   display: flex;
   align-items: center;

@@ -8,7 +8,7 @@ title: Tabs
 
 该组件只提供最基本的切换功能，提供选中样式属性activeClass。
 
-每一个`z-tabs-item`组件都应该有个`name`属性，用于标记唯一性id。
+每一个`z-tabs-item`组件都应该有个`name`属性，用于标记唯一性，并跟`TabsPane`的name对应。
 
 <ClientOnly>
 <tabs-intro></tabs-intro>

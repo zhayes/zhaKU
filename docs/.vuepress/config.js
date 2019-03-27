@@ -1,7 +1,8 @@
 module.exports = {
     base:'/zhaKU/',
     title: 'zhaKU',
-    description: '基于vue2.xx的基本组件库',
+    description: '基于vue2.xx.xx的基本组件库',
+    serviceWorker: true,
     themeConfig: {
         nav: [
             { text: '个人博客', link: 'https://zhayes.github.io' }
