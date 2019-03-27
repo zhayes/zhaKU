@@ -16,6 +16,7 @@ title: Switch
 |:-|:-|:-|:-|
 |value|是否被选中|Boolean|false|
 |size|组件大小|String: small,middle,large|mmiddle|
+|disabled|是否禁用|Boolean|false|
 
 ### Events
 |属性|含义|类型|默认

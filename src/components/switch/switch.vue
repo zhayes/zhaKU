@@ -7,6 +7,7 @@
       @click="switchHandle"
       :data-size="size"
       :data-checked="''+isChecked"
+      :data-disabled="disabled"
       class="z-switch"
     >
       <span class="circleBtn" :data-checked="''+isChecked"></span>
@@ -104,17 +105,26 @@ $z-switch-large-size: 36px;
     transition: background-color 0.4s;
   }
 
-  .z-switch[data-checked=false] {
+  .z-switch[data-disabled="true"] {
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+
+    .circleBtn {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .z-switch[data-checked="false"] {
     background-color: #eaeaea;
     border-color: darken(#eaeaea, 15%);
   }
 
-  .z-switch[data-checked=true] {
+  .z-switch[data-checked="true"] {
     background-color: #1a73e8;
     border-color: darken(#1a73e8, 15%);
   }
 
-  .z-switch[data-size=small] {
+  .z-switch[data-size="small"] {
     height: $z-switch-small-height;
     width: $z-switch-small-width;
     border-radius: $z-switch-small-radius;
@@ -124,12 +134,12 @@ $z-switch-large-size: 36px;
       width: $z-switch-small-size;
     }
 
-    .circleBtn[data-checked=true]{
-        left: 16px;
+    .circleBtn[data-checked="true"] {
+      left: 16px;
     }
   }
 
-  .z-switch[data-size=middle] {
+  .z-switch[data-size="middle"] {
     height: $z-switch-middle-height;
     width: $z-switch-middle-width;
     border-radius: $z-switch-middle-radius;
@@ -139,12 +149,12 @@ $z-switch-large-size: 36px;
       width: $z-switch-middle-size;
     }
 
-    .circleBtn[data-checked=true]{
-        left: 28px;
+    .circleBtn[data-checked="true"] {
+      left: 28px;
     }
   }
 
-  .z-switch[data-size=large] {
+  .z-switch[data-size="large"] {
     height: $z-switch-large-height;
     width: $z-switch-large-width;
     border-radius: $z-switch-large-radius;
@@ -154,8 +164,8 @@ $z-switch-large-size: 36px;
       width: $z-switch-large-size;
     }
 
-    .circleBtn[data-checked=true]{
-        left: 40px;
+    .circleBtn[data-checked="true"] {
+      left: 40px;
     }
   }
 }
