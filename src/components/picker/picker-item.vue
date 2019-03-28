@@ -1,5 +1,5 @@
 <template>
-  <div class="z-item-wrapper" ref="wrapper">
+  <div class="z-item-wrapper" ref="wrapper" :style="`color: ${disabled ? '#aaa':'#333'}`">
     <div class="z-item-content">
       <div class="z-item" :key="item[valueKey]" v-for="item in items">{{item[labelKey]}}</div>
     </div>
@@ -87,7 +87,8 @@ export default {
         deceleration:0.002,
         scrollY: true,
         rotare: 6,
-        zoom: true
+        zoom: true,
+        bindToWrapper: true
       });
 
       scroll.on("beforeScrollStart", ()=>{

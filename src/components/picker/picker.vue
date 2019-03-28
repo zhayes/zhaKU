@@ -1,6 +1,6 @@
 <template>
-  <div v-if="show" :class="{'z-picker-model': showModel}" @click.stop="clickModel">
-    <div class="z-picker-wrapper" ref="picker" @click.stop>
+  <div v-if="show" :class="{'z-picker-model': showModel}" @click.stop="clickModel" @touchmove.prevent="">
+    <div class="z-picker-wrapper" ref="picker" @click.stop="">
       <div class="title">
         <div @click="cnacel" style="fontWeight:600">取消</div>
         <div style="color:#333">{{title}}</div>
@@ -217,7 +217,7 @@ export default {
   left: 0;
   right: 0;
   background-color: rgba($color: #000, $alpha: 0.4);
-  z-index: 90;
+  z-index: 100;
   overflow: hidden;
 }
 
