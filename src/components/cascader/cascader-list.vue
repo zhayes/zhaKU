@@ -75,7 +75,7 @@ export default {
 .items {
   display: flex;
   flex-flow: nowrap;
-  width: 100px;
+  width: auto;
   align-items: center;
   .cascader-content {
     flex: 1;

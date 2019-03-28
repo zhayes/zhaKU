@@ -129,12 +129,14 @@ $input-border-color: #d9d9d9;
     flex: 1;
     padding: 0 1em;
     width: 100%;
+
+    transition: .3s;
     &:hover{
       border-color: #1a73e8;
     }
     &:focus {
-      box-shadow: inset 0px 0px 1px 1px #1a73e8;
-      border-color: transparent;
+      box-shadow: inset -2px -2px 4px -2px #1a73e8;
+      border-color: #1a73e8;
     }
   }
 
