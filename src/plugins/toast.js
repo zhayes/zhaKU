@@ -1,6 +1,6 @@
 import Toast from '../components/toast/toast.vue'
 
-export const toast = {
+const toast = {
     install(Vue, options){
         Vue.prototype.$ztoast = (message, params={})=>{
             const Constructor = Vue.extend(Toast);
@@ -15,3 +15,5 @@ export const toast = {
         }
     }
 }
+
+export default toast;

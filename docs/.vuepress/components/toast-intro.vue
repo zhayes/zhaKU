@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { toast } from "../../../src/plugins/toast.js";
+import toast from "../../../src/plugins/toast.js";
 import Button from "../../../src/components/button/button.vue";
 import Vue from "vue";
 

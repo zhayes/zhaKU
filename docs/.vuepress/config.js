@@ -17,8 +17,10 @@ module.exports = {
             '/components/toast.md',
             '/components/cell.md',
             '/components/tabs.md',
+            '/components/modal.md',
             '/components/cascader.md',
-            '/components/picker.md'
+            '/components/picker.md',
+            '/components/upload.md'
         ]
     }
 }

@@ -6,6 +6,7 @@
       <z-icon name="settings_light"/>
       <z-icon name="round_location_fill"/>
       <z-icon name="comment"/>
+      <z-icon spinning name="loading_mum"/>
     </p>
   </div>
 </template>

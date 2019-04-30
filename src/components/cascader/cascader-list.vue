@@ -75,16 +75,16 @@ export default {
 .items {
   display: flex;
   flex-flow: nowrap;
+  white-space: nowrap;
   width: auto;
   align-items: center;
-  .cascader-content {
-    flex: 1;
-  }
 
   .cascader-content {
+    flex: 1;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   line-height: 1.5em;

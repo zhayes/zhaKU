@@ -7,7 +7,7 @@ title: Toast
 为了方便用户使用，Toast组件被封装成插件的形式，建议用户应该在全局注册
 
 ```javascript
-import { toast } from "../../../src/plugins/toast.js";
+import toast from "../../../src/plugins/toast.js";
 import Vue from "vue";
 
 Vue.use(toast);
