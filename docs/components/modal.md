@@ -4,7 +4,12 @@ title: Modal
 
 # Modal
 
-支持两种调用形式，组件的形式```<Modal>...</Modal>```，以及静态方法```Modal.alert({...})```。Modal有是三种类型，分别是```alert```、```confirm```、```prompt```。所以Modal也分别支持该三种方法的主动调用，```Modal.alert({...})```、```Modal.confirm({...})```、```Modal.prompt({...})```。
+支持两种调用形式，组件的形式```<Modal>...</Modal>```，以及静态方法```Modal.alert({...})```。Modal有是三种类型，分别是```alert```、```confirm```、```prompt```。
+
+所以Modal也分别支持该三种方法的主动调用:
+```Modal.alert({...})```
+```Modal.confirm({...})```
+```Modal.prompt({...})```
 
 ```javascript
 import modal from "../../../src/plugins/modal.js";
