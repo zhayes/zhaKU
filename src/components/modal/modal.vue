@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!destroyed">
     <div class="z-modal-mask" v-if="showModalHandle" @click="clickModal"></div>
     <div class="z-modal" ref="zmodal" v-if="!destroyed">
       <div class="z-modal-header" v-if="title">{{title}}</div>
