@@ -61,24 +61,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$btn-bg-default-color: #ffffff;
-$btn-bg-primary-color: #1a73e8;
-$btn-bg-danger-color: #ff0201;
-
-$btn-height-small: 24px;
-$btn-height-middle: 32px;
-$btn-height-large: 40px;
-
-$btn-font-size-small: 14px;
-$btn-font-size-middle: 14px;
-$btn-font-size-large: 18px;
-
-$btn-border-style: solid;
-$btn-border-size: 1px;
-$btn-border-radius: 4px;
-
-$btn-disabled-color: #aaa;
-$btn-disabled-bg-color: #f5f5f5;
+@import "src/style/var.scss";
 
 .z-btn {
   display: inline-flex;
@@ -97,6 +80,10 @@ $btn-disabled-bg-color: #f5f5f5;
   user-select: none;
 
   @extend .z-btn-default;
+
+   i.z-icon {
+    color: #fff;
+  }
 }
 
 .z-btn-default {
@@ -109,7 +96,6 @@ $btn-disabled-bg-color: #f5f5f5;
   &:focus {
     background-color: darken($btn-bg-default-color, 20%);
   }
-
 }
 
 .z-btn-primary {
@@ -122,10 +108,6 @@ $btn-disabled-bg-color: #f5f5f5;
   &:focus {
     background-color: darken($btn-bg-primary-color, 20%);
   }
-
-  svg{
-    fill: #fff;
-  }
 }
 
 .z-btn-danger {
@@ -137,10 +119,6 @@ $btn-disabled-bg-color: #f5f5f5;
 
   &:focus {
     background-color: darken($btn-bg-danger-color, 20%);
-  }
-
-  svg{
-    fill: #fff;
   }
 }
 
@@ -166,26 +144,26 @@ $btn-disabled-bg-color: #f5f5f5;
   border-style: dashed;
   border-color: darken($btn-bg-default-color, 30%);
   color: inherit;
-  &:hover{
-    background-color: ''
+  &:hover {
+    background-color: "";
   }
 }
 
 .z-btn-ghost-default {
-  &:hover{
+  &:hover {
     border-color: inherit;
   }
 }
 
 .z-btn-ghost-primary {
-  &:hover{
+  &:hover {
     border-color: darken($btn-bg-primary-color, 10%);
     color: darken($btn-bg-primary-color, 10%);
   }
 }
 
 .z-btn-ghost-danger {
-  &:hover{
+  &:hover {
     border-color: darken($btn-bg-danger-color, 10%);
     color: darken($btn-bg-danger-color, 10%);
   }
@@ -193,17 +171,17 @@ $btn-disabled-bg-color: #f5f5f5;
 
 .z-btn-ghost-default,
 .z-btn-ghost-primary,
-.z-btn-ghost-danger{
-  background-color: #fff
+.z-btn-ghost-danger {
+  background-color: #fff;
 }
 
 .z-btn-ghost-default,
 .z-btn-ghost-primary,
-.z-btn-ghost-danger{
-  &:hover{
+.z-btn-ghost-danger {
+  &:hover {
     background-color: #fff;
   }
-  &:focus{
+  &:focus {
     background-color: #eaeaea;
   }
 }
@@ -219,23 +197,25 @@ $btn-disabled-bg-color: #f5f5f5;
   cursor: not-allowed;
 }
 
- .z-btn-default-loading {
-    background-color: darken($btn-bg-default-color, 10%);
-  }
-  .z-btn-primary-loading {
-    background-color: darken($btn-bg-primary-color, 10%);
-  }
-  .z-btn-danger-loading {
-    background-color: darken($btn-bg-danger-color, 10%);
-  }
+.z-btn-default-loading {
+  background-color: darken($btn-bg-default-color, 10%);
+}
+.z-btn-primary-loading {
+  background-color: darken($btn-bg-primary-color, 10%);
+}
+.z-btn-danger-loading {
+  background-color: darken($btn-bg-danger-color, 10%);
+}
 
-  .z-btn-default-loading, .z-btn-primary-loading, .z-btn-danger-loading{
-    color: $btn-disabled-color;
-    cursor: not-allowed;
-  }
+.z-btn-default-loading,
+.z-btn-primary-loading,
+.z-btn-danger-loading {
+  color: $btn-disabled-color;
+  cursor: not-allowed;
+}
 
-  .z-btn-loading{
-    position: absolute;
-    font-size: 1.7em;
-  }
+.z-btn-loading {
+  position: absolute;
+  font-size: 1.7em;
+}
 </style>

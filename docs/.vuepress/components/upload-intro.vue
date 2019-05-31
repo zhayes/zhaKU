@@ -1,7 +1,13 @@
 <template>
   <div>
     <p>
-      <z-upload :filesList="filesList" @loadEnd="loadEnd" @loadStart="loadStart" @success="success" @delete="deleteHandle"/>
+      <z-upload 
+        :filesList="filesList"
+        @loadEnd="loadEnd" 
+        @loadStart="loadStart" 
+        @success="success" 
+        @delete="deleteHandle"
+      />
     </p>
   </div>
 </template>

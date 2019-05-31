@@ -2,11 +2,11 @@
   <div>
     <p>
       <z-btn-goup>
-        <z-button @click="alert">调用Modal.alert方法</z-button>
+        <z-button @click="confirm">调用Modal.confirm</z-button>
         <z-button @click="visible=true">控制组件内容显示</z-button>
       </z-btn-goup>
 
-      <z-modal :visible="visible" :onOk="confirm" :onCancel="()=>visible=false">
+      <z-modal :visible="visible" :onOk="alert" :onCancel="()=>visible=false">
           Hello, World!
       </z-modal>
     </p>
@@ -30,10 +30,10 @@ export default {
     "z-btn-goup": ButtonGroup
   },
   methods: {
-    confirm(){
+    alert(){
       this.visible = false;
     },
-    alert() {
+    confirm() {
       Modal.confirm({
         content: "您喜欢zhaKU库吗？",
         okText:'喜欢',

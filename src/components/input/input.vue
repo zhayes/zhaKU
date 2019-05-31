@@ -102,12 +102,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$input-height-middle: 32px;
-$input-height-small: 24px;
-$input-height-large: 40px;
-$input-disabled-bg-color: #f5f5f5;
-
-$input-border-color: #d9d9d9;
+@import'src/style/var.scss';
 
 .z-input-swrap {
   position: relative;

@@ -6,8 +6,12 @@ import Tabs,{TabsBody, TabsHeader, TabsItem, TabsPane} from './components/tabs/i
 import Cascader from './components/cascader/cascader.vue';
 import Cell from './components/cell/cell.vue';
 import Picker from './components/picker/picker.vue';
+import Toast from './components/toast/toast.vue';
+//import Upload from './components/upload/upload.vue';
+import Checkbox from './components/checkbox/checkbox.vue';
+import Modal from './components/modal/modal.vue';
 
-export {
+module.exports = {
     Button,
     Icon,
     ButtonGroup,
@@ -19,5 +23,9 @@ export {
     TabsPane,
     Cascader,
     Cell,
-    Picker
+    Picker,
+    Toast,
+    //Upload,
+    Checkbox,
+    Modal
 }

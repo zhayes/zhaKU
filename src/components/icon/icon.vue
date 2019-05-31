@@ -1,10 +1,9 @@
 <template>
-    <svg :class='{"z-icon": true, "z-icon-spinning": spinning}'  @click="$emit('click', $event)" >
-        <use :xlink:href="`#icon-${name}`"></use>
-    </svg>
+    <i :class='{"z-icon": true, "iconfont": true, [`icon-${name}`]: true,  "z-icon-spinning": spinning}' ></i>
 </template>
 <script>
-import "./svg.js"
+//import "./svg.js";
+
 export default {
     name: "z-icon",
     props:{
@@ -19,9 +18,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import url("//at.alicdn.com/t/font_1050742_77sjfjfvorf.css");
+
   .z-icon {
-      width: 1em; 
-      height: 1em; 
+      display: inline-flex;
+      align-items: center;
+      font-size: 1em;
+      &:before{
+        display: inline-flex;
+        align-items: center;
+        line-height: 1em;
+      }
     }
   @keyframes spinnig {
       0%{

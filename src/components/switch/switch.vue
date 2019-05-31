@@ -61,21 +61,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$z-switch-small-height: 24px;
-$z-switch-middle-height: 32px;
-$z-switch-large-height: 40px;
-
-$z-switch-small-width: 40px;
-$z-switch-middle-width: 60px;
-$z-switch-large-width: 80px;
-
-$z-switch-small-radius: 12px;
-$z-switch-middle-radius: 16px;
-$z-switch-large-radius: 20px;
-
-$z-switch-small-size: 20px;
-$z-switch-middle-size: 28px;
-$z-switch-large-size: 36px;
+@import'src/style/var.scss';
 
 .z-switch-swrap {
   display: inline-flex;
@@ -120,8 +106,8 @@ $z-switch-large-size: 36px;
   }
 
   .z-switch[data-checked="true"] {
-    background-color: #1a73e8;
-    border-color: darken(#1a73e8, 15%);
+    background-color: $primary-color;
+    border-color: darken($primary-color, 15%);
   }
 
   .z-switch[data-size="small"] {

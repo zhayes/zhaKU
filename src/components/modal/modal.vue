@@ -177,6 +177,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import'src/style/var.scss';
+
 .z-modal-mask{
   position: fixed;
   top:0;
@@ -229,7 +231,7 @@ export default {
     }
 
     .z-modal-btn-confirm {
-      color: #1a73e8;
+      color: $primary-color;
     }
 
     .z-modal-btn {

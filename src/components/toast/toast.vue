@@ -112,6 +112,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import'src/style/var.scss';
+
 .z-toast {
   transition: all 0.4s;
   display: flex;
@@ -142,7 +144,7 @@ export default {
     cursor: pointer;
     padding: 8px 16px;
     height: 100%;
-    color: #1890ff;
+    color: $primary-color;
     text-align: center;
     width: 100%;
   }

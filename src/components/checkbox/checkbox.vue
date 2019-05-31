@@ -56,8 +56,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$z-checkbox-size: 20px;
-$z-checkbox-color: #1a73e8;
+@import'src/style/var.scss';
 
 .z-checkbox-swrap {
   display: inline-flex;
