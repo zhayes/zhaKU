@@ -1,5 +1,5 @@
 {
-  "name": "zhaKU",
+  "name": "zhaku",
   "version": "0.0.1",
   "description": "",
   "main": "./lib/index.js",
@@ -54,6 +54,12 @@
     "url": "https://github.com/zhayes/zhaKU/issues"
   },
   "homepage": "https://github.com/zhayes/zhaKU#readme",
+  "keywords": [
+    "zhaku",
+    "vue",
+    "js",
+    "components"
+  ],
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
   }
