@@ -1,4 +1,4 @@
 doc
 .cache
-deploy
+deploy.sh
 node_modules
