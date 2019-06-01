@@ -53,11 +53,11 @@ const {Button, ButtonGroup, Icon}  = zhaku;
 
 export default {
   name: "button_intro",
-  // components: {
-  //   "z-button": Button,
-  //   "z-button-group": ButtonGroup,
-  //   "z-icon": Icon
-  // },
+  components: {
+    "z-button": Button,
+    "z-button-group": ButtonGroup,
+    "z-icon": Icon
+  },
   data() {
     return {
       loading: false
