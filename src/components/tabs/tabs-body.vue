@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: 'tabs-body'
+    name: 'z-tabs-body'
 }
 </script>
 <style lang="scss" scoped>

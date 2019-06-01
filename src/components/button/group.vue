@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    
+    name:'z-button-group'
 }
 </script>
 <style lang="scss" scoped>

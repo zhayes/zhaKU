@@ -28,6 +28,7 @@ const nprogressConfig = {
 };
 
 export default {
+  name:'z-upload',
   data() {
     return {
       files: this.fileList

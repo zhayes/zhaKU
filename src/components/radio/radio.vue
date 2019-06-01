@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    
+    name:'z-radio'
 }
 </script>
 <style lang="scss" scoped>

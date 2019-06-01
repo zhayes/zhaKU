@@ -9,7 +9,7 @@
 import BScroll from "better-scroll";
 
 export default {
-  name: "Picker",
+  name: "z-picker-item",
   data() {
     return {
       items: this.data,

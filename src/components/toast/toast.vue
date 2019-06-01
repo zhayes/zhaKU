@@ -9,6 +9,7 @@
 </template>
 <script>
 export default {
+  name:'z-toast',
   data() {
     const top = this.position == "top" ? -100 : "";
     const bottom = this.position == "bottom" ? -100 : "";

@@ -20,16 +20,18 @@ export default {
 <style lang="scss" scoped>
 @import url("//at.alicdn.com/t/font_1050742_77sjfjfvorf.css");
 
-  .z-icon {
-      display: inline-flex;
-      align-items: center;
-      font-size: 1em;
-      &:before{
+.z-icon {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    align-items: center;
+    font-size: 1em;
+    &:before{
         display: inline-flex;
         align-items: center;
         line-height: 1em;
-      }
     }
+}
   @keyframes spinnig {
       0%{
           transform: rotate(0deg)

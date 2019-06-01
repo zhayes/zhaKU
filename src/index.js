@@ -6,12 +6,14 @@ import Tabs,{TabsBody, TabsHeader, TabsItem, TabsPane} from './components/tabs/i
 import Cascader from './components/cascader/cascader.vue';
 import Cell from './components/cell/cell.vue';
 import Picker from './components/picker/picker.vue';
-import Toast from './components/toast/toast.vue';
+//import Toast from './components/toast/toast.vue';
 //import Upload from './components/upload/upload.vue';
 import Checkbox from './components/checkbox/checkbox.vue';
 import Modal from './components/modal/modal.vue';
 
-module.exports = {
+import toast from "./plugins/toast.js";
+
+const components = {
     Button,
     Icon,
     ButtonGroup,
@@ -24,8 +26,24 @@ module.exports = {
     Cascader,
     Cell,
     Picker,
-    Toast,
     //Upload,
     Checkbox,
     Modal
+}
+
+const install = (Vue, options)=>{
+
+    Object.keys(components).map((componetConstructor)=>{
+        const name = components[componetConstructor].name;
+        const component = components[componetConstructor];
+        Vue.component(name, component);
+    })
+
+    Vue.use(toast);
+
+}
+
+export default {
+    install,
+    ...components
 }

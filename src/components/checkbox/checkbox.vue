@@ -14,6 +14,7 @@
 </template>
 <script>
 export default {
+  name:'z-checkbox',
   data() {
     return {
       isChecked: this.checked

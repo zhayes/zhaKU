@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="right" v-if="selectedChildrenData && selectedChildrenData.length">
-      <cascader-list :index="num" :data="selectedChildrenData"/>
+      <z-cascader-list :index="num" :data="selectedChildrenData"/>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 import Icon from "../icon/icon.vue";
 
 export default {
-  name: "cascaderList",
+  name: "z-cascader-list",
   data() {
     return {
       num: this.index,

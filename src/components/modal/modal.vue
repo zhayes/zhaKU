@@ -36,6 +36,7 @@ import Input from "../input/input.vue";
 import Icon from "../icon/icon.vue";
 
 export default {
+  name:'z-modal',
   data() {
     return {
       inputValue: this.value,

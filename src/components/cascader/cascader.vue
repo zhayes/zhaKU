@@ -17,7 +17,7 @@
       <div
         style="position:absolute; z-index: 10; top: 2px; left: 0; box-shadow: 0 2px 2px 2px #ccc"
       >
-        <cascader-list :data="data"/>
+        <z-cascader-list :data="data"/>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@ import CascaderList from "./cascader-list.vue";
 import Input from "../input/input.vue";
 import Vue from "vue";
 export default {
-  name: "Cascader",
+  name: "z-cascader",
   data() {
     return {
       visible: false,
@@ -88,7 +88,7 @@ export default {
     }
   },
   components: {
-    "cascader-list": CascaderList,
+    "z-cascader-list": CascaderList,
     "z-input": Input
   },
   provide() {

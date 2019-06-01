@@ -26,6 +26,7 @@
 <script>
 import Icon from "../icon/icon.vue";
 export default {
+  name:'z-input',
   props: {
     type: {
       type: String,

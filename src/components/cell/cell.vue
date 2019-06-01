@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: "Cell",
+  name: "z-cell",
   props: {
     title: {
       type: [String, Number]

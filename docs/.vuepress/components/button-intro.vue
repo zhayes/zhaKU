@@ -47,17 +47,17 @@
   </div>
 </template>
 <script>
-import Button from "../../../src/components/button/button.vue";
-import ButtonGroup from "../../../src/components/button/group.vue";
-import Icon from "../../../src/components/icon/icon.vue";
+import Vue from 'vue';
+import zhaku from '../../../src/index.js';
+const {Button, ButtonGroup, Icon}  = zhaku;
 
 export default {
   name: "button_intro",
-  components: {
-    "z-button": Button,
-    "z-button-group": ButtonGroup,
-    "z-icon": Icon
-  },
+  // components: {
+  //   "z-button": Button,
+  //   "z-button-group": ButtonGroup,
+  //   "z-icon": Icon
+  // },
   data() {
     return {
       loading: false

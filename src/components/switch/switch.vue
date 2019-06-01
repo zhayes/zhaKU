@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: "Switch",
+  name: "z-switch",
   data() {
     return {
       isChecked: this.value

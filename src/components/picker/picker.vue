@@ -26,7 +26,7 @@
 import pickerItem from "./picker-item.vue";
 
 export default {
-  name: "Picker",
+  name: "z-picker",
   data() {
     return {
       values: [...this.value],

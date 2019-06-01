@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name:'z-tabs-pane',
   data() {
     return {
       active: false
