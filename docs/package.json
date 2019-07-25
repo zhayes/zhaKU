@@ -8,5 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "zhaku": "0.0.3"
+  },
+  "dependencies": {}
 }

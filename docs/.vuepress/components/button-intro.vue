@@ -49,7 +49,10 @@
 <script>
 import Vue from 'vue';
 import zhaku from '../../../src/index.js';
-const {Button, ButtonGroup, Icon}  = zhaku;
+import Button from "../../../src/components/button/button.vue";
+import ButtonGroup from "../../../src/components/button/group.vue";
+import Icon from "../../../src/components/icon/icon.vue";
+
 
 export default {
   name: "button_intro",
